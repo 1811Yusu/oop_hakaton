@@ -38,9 +38,9 @@ class Host:
     def update(self):
         id_input = input('введите ID: ')
         update_input = {
-    'title': str(input('Новое имя: ')),
-    'is_done': bool(input('Введите статус True или False: '))
-    }
+        'title': str(input('Новое имя: ')),
+        'is_done': bool(input('Введите статус True или False: '))
+        }
         response = requests.put(self.url + f'todo/{id_input}/update', data=json.dumps(update_input))
         if response.status_code == 200:
             return True
